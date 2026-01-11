@@ -29,6 +29,18 @@ PORT = os.environ.get("PORT", "8080")
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://villainravangaming:mikey_kun_781_@cluster0.fbgs1zz.mongodb.net/?retryWrites=true&w=majority")
 DB_NAME = os.environ.get("DATABASE_NAME", "villainravangaming")
 
+# ========= SHORTENER CONFIG =========
+SHORT_URL = os.environ.get("SHORT_URL", "arolinks.com")
+SHORT_API = os.environ.get("SHORT_API", None)
+
+# ========= PREMIUM USERS =========
+try:
+    PREMIUM_USERS = list(
+        map(int, os.environ.get("PREMIUM_USERS", "").split(","))
+    )
+except:
+    PREMIUM_USERS = []
+    
 #force sub channel id, if you want enable force sub
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002040559376"))
 JOIN_REQUEST_ENABLE = os.environ.get("JOIN_REQUEST_ENABLED", None)
